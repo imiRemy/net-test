@@ -28,8 +28,8 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 | Parameter | Out of the Box | Tuned |
 | -------- | --------: | --------: |
 | MTU | 1500 | 9000 |
-| core max read | 0 | 0 |
-| core max write | 0 | 0 |
+| net.core.rmem_max | 0 | 0 |
+| net.core.wmem_max | 0 | 0 |
 | optional max | 0 | 0 |
 
 ### Client / Server Direct Connection via CAT6A Cable
