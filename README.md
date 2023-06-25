@@ -23,6 +23,15 @@ Proxmox Virtual Environment v7.4:
 * Dedicated 10Gb Ethernet NIC: 10GTek
 * Virtual Machines: Ubuntu Desktop v22.04, 2 CPUs, 6GB RAM
 
+#### Note on Tuning
+Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The tuning was not exhaustive but was based on looking at MTU size and some basic buffer sizes.
+| Parameter | Out of the Box | Tuned |
+| -------- | --------: | --------: |
+| MTU | 1500 | 9000 |
+| core max read | 0 | 0 |
+| core max write | 0 | 0 |
+| optional max | 0 | 0 |
+
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable.
 | Target Speed | Out of the Box Result | Tuned Result |
@@ -34,4 +43,10 @@ Direct connection between network interfaces of Ubuntu client and server using C
 
 ### Client / Server Direct Connection via Fiber Link
 This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek ....)
+| Target Speed | Out of the Box Result | Tuned Result |
+| --------: | -------- | -------- |
+| 1.0 Gbps | xx | yy |
+| 2.5 Gbps | xx | yy |
+| 5.0 Gbps | xx | yy |
+| 10.0 Gbps | xx | yy |
 
