@@ -14,6 +14,14 @@ For installation on ubuntu, use the ```install.sh``` script which will add ```if
 For a basic run of tests without changing any network buffers, MTU, etc., use the ```server_test.sh``` on
 the server instance and ```client_test.sh``` on the client instance of ubuntu.
 
+To run the tests, start the server script on the server machine and then invoke the client script on the client machine. Results will be recorded to a log file on the client machine. Note that the scripts take a argument which is the IPv4 address that the server is listening on.
+
+Server side:
+```$ ./server_test.sh <server_IP_address>```
+
+Client side:
+```$ ./client_test.sh <server_IP_address>```
+
 ## Some Results
 The following results were obtained from using Ubuntu virtual machines running in a Proxmox environment and using a dedicated 10Gb Ethernet NIC card separate from the main network interface for the system.
 
