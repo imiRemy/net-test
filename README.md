@@ -14,4 +14,11 @@ For installation on ubuntu, use the ```install.sh``` script which will add ```if
 For a basic run of tests without changing any network buffers, MTU, etc., use the ```server_test.sh``` on
 the server instance and ```client_test.sh``` on the client instance of ubuntu.
 
+## Some Results
+The following results were obtained from using Ubuntu virtual machines running in a Proxmox environment and using a dedicated 10Gb Ethernet NIC card separate from the main network interface for the system.
 
+### System Configuration
+Proxmox Virtual Environment v7.4
+* Intel i7-xxxx CPU at x GHz
+* Dedicated 10Gb Ethernet NIC: 10GTek
+Ubuntu Desktop v22.04
