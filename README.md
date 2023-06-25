@@ -18,7 +18,14 @@ the server instance and ```client_test.sh``` on the client instance of ubuntu.
 The following results were obtained from using Ubuntu virtual machines running in a Proxmox environment and using a dedicated 10Gb Ethernet NIC card separate from the main network interface for the system.
 
 ### System Configuration
-Proxmox Virtual Environment v7.4
-* Intel i7-xxxx CPU at x GHz
+Proxmox Virtual Environment v7.4:
+* Intel i7-xxxx CPU at x GHz with 64GB DDR3 RAM
 * Dedicated 10Gb Ethernet NIC: 10GTek
-Ubuntu Desktop v22.04
+* Virtual Machines: Ubuntu Desktop v22.04, 2 CPUs, 6GB RAM
+
+### Client / Server Direct Connection
+Direct connection between network interfaces of Ubuntu client and server using CAT6A cable.
+
+### Client / Server Connection via Direct Fiber Link
+This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek ....)
+
