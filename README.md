@@ -25,12 +25,12 @@ Proxmox Virtual Environment v7.4:
 
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable.
-| Target Speed | Result |
-| --------: | -------- |
-| 1.0 Gbps | xx |
-| 2.5 Gbps | xx |
-| 5.0 Gbps | xx |
-| 10.0 Gbps | xx |
+| Target Speed | Out of the Box Result | Tuned Result |
+| --------: | -------- | -------- |
+| 1.0 Gbps | xx | yy |
+| 2.5 Gbps | xx | yy |
+| 5.0 Gbps | xx | yy |
+| 10.0 Gbps | xx | yy |
 
 ### Client / Server Direct Connection via Fiber Link
 This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek ....)
