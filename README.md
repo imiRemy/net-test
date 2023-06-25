@@ -30,7 +30,7 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 | MTU | 1500 | 9000 |
 | net.core.rmem_max | 0 | 0 |
 | net.core.wmem_max | 0 | 0 |
-| optional max | 0 | 0 |
+| net.core.optmem_max | 0 | 0 |
 
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable.
