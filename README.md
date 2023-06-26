@@ -43,11 +43,12 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links. Start VMs, run full test script twice and take the second set of results.
 | Target Speed | Out of the Box Result | Tuned Result |
-| --------: | -------- | -------- |
+| --------: | --------: | --------: |
 | 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
 | 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
 | 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
 | 10.0 Gbps | 9.31 Gbps | 9.89 Gbps |
+
 *Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
 ### Client / Server Direct Connection via Fiber Link
