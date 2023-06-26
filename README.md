@@ -36,9 +36,9 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 | Parameter | Out of the Box | Tuned |
 | -------- | --------: | --------: |
 | MTU | 1500 | 9000 |
-| net.core.rmem_max | 0 | 1024000 |
-| net.core.wmem_max | 0 | 1024000 |
-| net.core.optmem_max | 0 | 204800 |
+| net.core.rmem_max | 212992 | 1024000 |
+| net.core.wmem_max | 212992 | 1024000 |
+| net.core.optmem_max | 20480 | 204800 |
 
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links. Start VMs, run full test script twice and take the second set of results.
