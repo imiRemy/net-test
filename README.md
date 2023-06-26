@@ -41,13 +41,14 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 | net.core.optmem_max | 0 | 204800 |
 
 ### Client / Server Direct Connection via CAT6A Cable
-Direct connection between network interfaces of Ubuntu client and server using CAT6A cable.
+Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links.
 | Target Speed | Out of the Box Result | Tuned Result |
 | --------: | -------- | -------- |
-| 1.0 Gbps | xx | yy |
-| 2.5 Gbps | xx | yy |
-| 5.0 Gbps | xx | yy |
-| 10.0 Gbps | xx | yy |
+| 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
+| 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
+| 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
+| 10.0 Gbps | 9.4 Gbps | 9.89 Gbps |
+*Technically 999.75 Mbps based on iperf3 reporting across all bidirectional links.
 
 ### Client / Server Direct Connection via Fiber Link
 This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek ....)
