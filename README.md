@@ -28,7 +28,7 @@ The following results were obtained from using Ubuntu virtual machines running i
 ### System Configuration
 Proxmox Virtual Environment v7.4-3:
 * Intel i7-7700 CPU at 3.6GHz with 64GB DDR3 RAM, 1TB M.2 NVMe
-* Dedicated 10Gb Ethernet NIC for test: 10GTek Dual Intel X540 (X540-10G-2T-X8)
+* Dedicated 10Gb Ethernet NIC for test: 10Gtek Dual Intel X540 (X540-10G-2T-X8)
 * Virtual Machines: Ubuntu 22.04.2 LTS, 2 CPUs, 4GB RAM
 
 #### Note on Tuning
@@ -52,7 +52,7 @@ Direct connection between network interfaces of Ubuntu client and server using C
 *Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
 ### Client / Server Direct Connection via Fiber Link
-This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
+This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10Gtek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
 | Target Speed | Out of the Box Result | Tuned Result |
 | --------: | --------: | --------: |
 | 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
