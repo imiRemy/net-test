@@ -52,7 +52,7 @@ Direct connection between network interfaces of Ubuntu client and server using C
 *Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
 ### Client / Server Direct Connection via Fiber Link
-This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10Gtek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
+This is a direct connection and was used to compare the performance of a direct CAT6A cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10Gtek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
 | Target Speed | Out of the Box Result | Tuned Result |
 | --------: | --------: | --------: |
 | 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
