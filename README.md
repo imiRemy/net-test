@@ -26,10 +26,10 @@ Client side:
 The following results were obtained from using Ubuntu virtual machines running in a Proxmox environment and using a dedicated 10Gb Ethernet NIC card separate from the main network interface for the system.
 
 ### System Configuration
-Proxmox Virtual Environment v7.4:
-* Intel i7-xxxx CPU at x GHz with 64GB DDR3 RAM
-* Dedicated 10Gb Ethernet NIC: 10GTek
-* Virtual Machines: Ubuntu Desktop v22.04, 2 CPUs, 6GB RAM
+Proxmox Virtual Environment v7.4-3:
+* Intel i7-7700 CPU at 3.6GHz with 64GB DDR3 RAM, 1TB M.2 NVMe
+* Dedicated 10Gb Ethernet NIC for test: 10GTek Dual Intel X540 (X540-10G-2T-X8)
+* Virtual Machines: Ubuntu 22.04.2 LTS, 2 CPUs, 4GB RAM
 
 #### Note on Tuning
 Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The tuning was not exhaustive but was based on looking at MTU size and some basic buffer sizes.
@@ -41,21 +41,22 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 | net.core.optmem_max | 0 | 204800 |
 
 ### Client / Server Direct Connection via CAT6A Cable
-Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links.
+Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links. Start VMs, run full test script twice and take the second set of results.
 | Target Speed | Out of the Box Result | Tuned Result |
 | --------: | -------- | -------- |
 | 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
 | 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
 | 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
-| 10.0 Gbps | 9.4 Gbps | 9.89 Gbps |
-*Technically 999.75 Mbps based on iperf3 reporting across all bidirectional links.
+| 10.0 Gbps | 9.31 Gbps | 9.89 Gbps |
+*Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
 ### Client / Server Direct Connection via Fiber Link
-This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek ....)
+This is a direct connection and was used to compare the performance of a direct cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10GTek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
 | Target Speed | Out of the Box Result | Tuned Result |
 | --------: | -------- | -------- |
-| 1.0 Gbps | xx | yy |
-| 2.5 Gbps | xx | yy |
-| 5.0 Gbps | xx | yy |
-| 10.0 Gbps | xx | yy |
+| 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
+| 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
+| 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
+| 10.0 Gbps | 9.38 Gbps | 9.89 Gbps |
+*Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
