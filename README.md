@@ -32,7 +32,7 @@ Proxmox Virtual Environment v7.4-3:
 * Virtual Machines: Ubuntu 22.04.2 LTS, 2 CPUs, 4GB RAM
 
 #### Note on Tuning
-Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The tuning was not exhaustive but was based on looking at MTU size and some basic buffer sizes.
+Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The tuning was not exhaustive but was based on setting MTU to jumbo size and some other basic buffer sizes.
 | Parameter | Out of the Box | Tuned |
 | -------- | --------: | --------: |
 | MTU | 1500 | 9000 |
