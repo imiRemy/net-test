@@ -3,7 +3,8 @@
 # Usage: set_buffers.sh [interface]
 # These changes are lost at system restart.
 
-IF_DEFAULT=enp6s16
+source .env
+echo "Interface environment variable (default): $IF_DEFAULT"
 
 # Set MTU for jumbo frames.
 
