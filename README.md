@@ -42,23 +42,36 @@ Testing was both with "Out of the Box" and with a "Tuned" set of parameters. The
 
 ### Client / Server Direct Connection via CAT6A Cable
 Direct connection between network interfaces of Ubuntu client and server using CAT6A cable. Rate averaged across all bidirectional links. Start VMs, run full test script twice and take the second set of results.
-| Target Speed | Out of the Box Result | Tuned Result |
+
+#### Network Speed
+| Target Speed | Out of the Box Result* | Tuned Result* |
 | --------: | --------: | --------: |
-| 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
+| 1.0 Gbps | 1.0 Gbps | 1.0 Gbps |
 | 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
 | 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
 | 10.0 Gbps | 9.39 Gbps | 9.89 Gbps |
 
-*Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
+*Based on ```iperf3``` reporting across all bidirectional links on a 300 second test.
+
+#### Server CPU Load
+| Target Speed | Out of the Box Result* | Tuned Result* |
+| --------: | --------: | --------: |
+| 1.0 Gbps | 1.0 Gbps | 12.7% |
+| 2.5 Gbps | 2.5 Gbps | 17.6% |
+| 5.0 Gbps | 5.0 Gbps | 27.5% |
+| 10.0 Gbps | 9.39 Gbps | 45.2% |
+
+* Based on the average per minute load of the middle three minutes of a five minute test.
 
 ### Client / Server Direct Connection via Fiber Link
 This is a direct connection and was used to compare the performance of a direct CAT6A cable connection to direct connection using a segment of OM3 fiber cable and transceivers (10Gtek Media Converter, XG0200-SFP). Start VMs, run full test script twice and take the second set of results.
-| Target Speed | Out of the Box Result | Tuned Result |
+| Target Speed | Out of the Box Result* | Tuned Result* |
 | --------: | --------: | --------: |
-| 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
+| 1.0 Gbps | 1.0 Gbps** | 1.0 Gbps** |
 | 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
 | 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
 | 10.0 Gbps | 9.38 Gbps | 9.89 Gbps |
 
-*Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
+*All tests based on ```iperf3``` reporting across all bidirectional links on a 30 second test.
+**Technically 999.75 Mbps.
 
