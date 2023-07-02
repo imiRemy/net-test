@@ -47,7 +47,7 @@ Direct connection between network interfaces of Ubuntu client and server using C
 | 1.0 Gbps | 1.0 Gbps* | 1.0 Gbps* |
 | 2.5 Gbps | 2.5 Gbps | 2.5 Gbps |
 | 5.0 Gbps | 5.0 Gbps | 5.0 Gbps |
-| 10.0 Gbps | 9.31 Gbps | 9.89 Gbps |
+| 10.0 Gbps | 9.39 Gbps | 9.89 Gbps |
 
 *Technically 999.75 Mbps based on ```iperf3``` reporting across all bidirectional links.
 
