@@ -40,6 +40,7 @@ echo "Test will start in $WAIT seconds..."
 for RATE in $TEST_SPEEDS; do
   while [ $(date --utc +%S) -ne "$START_SECOND" ]; do sleep 1; done
   echo "Testing $RATE..."
+  echo "$(date --utc +%Y-%m-%d-%H%M.%S): testing $RATE..." >> $LOG_FILE
   iperf3 --client $IP_ADDR --time $DURATION --omit $OMIT --bidir --interval 0 --bitrate $RATE --logfile $LOG_FILE
   sleep 60
 done
