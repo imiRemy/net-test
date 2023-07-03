@@ -32,7 +32,7 @@ echo "$0: Test results on $IP_ADDR" >> $LOG_FILE
 # Test starts early for the warm-up ("omit") time to complete before the beginning of a minute.
 
 let "START_SECOND=((60-$OMIT)%60)"
-NOW=$(date --utc +%S)
+NOW=$((10#$(date --utc +%S)))
 let "WAIT = (60+$START_SECOND-$NOW)%60"
 
 echo "Test will start in $WAIT seconds..."

@@ -56,10 +56,10 @@ Direct connection between network interfaces of Ubuntu client and server using C
 #### Server CPU Load
 | Target Speed | Out of the Box Result* | Tuned Result* |
 | --------: | --------: | --------: |
-| 1.0 Gbps | 1.0 Gbps | 12.7% |
-| 2.5 Gbps | 2.5 Gbps | 17.6% |
-| 5.0 Gbps | 5.0 Gbps | 27.5% |
-| 10.0 Gbps | 9.39 Gbps | 45.2% |
+| 1.0 Gbps | 12.3% | 12.7% |
+| 2.5 Gbps | 22.3% | 17.6% |
+| 5.0 Gbps | 34.0% | 27.5% |
+| 10.0 Gbps | 62.1% | 45.2% |
 
 * Based on the average per minute load of the middle three minutes of a five minute test.
 
