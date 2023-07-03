@@ -8,6 +8,8 @@ source .env
 echo "Server environment variable: $SERVER_IP_DEFAULT"
 echo "Logging directory: $LOG_ROOT"
 echo "Test speeds: $TEST_SPEEDS"
+echo "Test duration per speed: $DURATION"
+echo "Test warm-up duration: $OMIT"
 
 # Check for optionally supplied server IP address and override default if it exists.
 
@@ -20,14 +22,25 @@ fi
 # Set up logging.
 
 mkdir -p "$LOG_ROOT"
-LOG_FILE="$LOG_ROOT/net-test-$(date +%Y-%m-%d-%H%M.%S).txt"
+TIMESTAMP=$(date --utc +%Y-%m-%d-%H%M.%S)
+LOG_FILE="$LOG_ROOT/net-test-$TIMESTAMP.txt"
 echo "Logging results for $IP_ADDR in $LOG_FILE"
+echo "$0: $(date --utc)" >> $LOG_FILE
 echo "$0: Test results on $IP_ADDR" >> $LOG_FILE
 
-# Run tests.
+# Run starting at the beginning of a minute.
+# Test starts early for the warm-up ("omit") time to complete before the beginning of a minute.
+
+let "START_SECOND=((60-$OMIT)%60)"
+NOW=$((10#$(date --utc +%S)))
+let "WAIT = (60+$START_SECOND-$NOW)%60"
+
+echo "Test will start in $WAIT seconds..."
 
 for RATE in $TEST_SPEEDS; do
+  while [ $(date --utc +%S) -ne "$START_SECOND" ]; do sleep 1; done
   echo "Testing $RATE..."
-  iperf3 --client $IP_ADDR --time 30 --omit 15 --bidir --interval 0 --bitrate $RATE --logfile $LOG_FILE
+  iperf3 --client $IP_ADDR --time $DURATION --omit $OMIT --bidir --interval 0 --bitrate $RATE --logfile $LOG_FILE
+  sleep 60
 done
 
