@@ -24,9 +24,15 @@ fi
 mkdir -p "$LOG_ROOT"
 TIMESTAMP=$(date --utc +%Y-%m-%d-%H%M.%S)
 LOG_FILE="$LOG_ROOT/net-test-$TIMESTAMP.txt"
-echo "Logging results for $IP_ADDR in $LOG_FILE"
+echo "Logging results for server at $IP_ADDR in $LOG_FILE"
 echo "$0: $(date --utc)" >> $LOG_FILE
-echo "$0: Test results on $IP_ADDR" >> $LOG_FILE
+echo "Test results for server at $IP_ADDR" >> $LOG_FILE
+
+# Write .env options into the log file.
+
+echo "Configuration options in .env file:" >> $LOG_FILE
+cat .env | awk 'NF' | grep -v '^ *#' >> $LOG_FILE
+echo "" >> $LOG_FILE
 
 # Run starting at the beginning of a minute.
 # Test starts early for the warm-up ("omit") time to complete before the beginning of a minute.
