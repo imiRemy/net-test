@@ -34,6 +34,18 @@ echo "Configuration options in .env file:" >> $LOG_FILE
 cat .env | awk 'NF' | grep -v '^ *#' >> $LOG_FILE
 echo "" >> $LOG_FILE
 
+# Write MTU for client and server.
+# Server command can be made with key pair to avoid manual login.
+# Assumes the interace name of the server is the same as the client; i.e. IF_DEFUALT from .env file.
+SERVER_MTU=$(ssh $USER@$IP_ADDR ifconfig | grep $IF_DEFAULT | awk '{print $4;}')
+CLIENT_MTU=$(ifconfig | grep $IF_DEFAULT | awk '{print $4;}')
+
+echo "Server MTU: $SERVER_MTU" >> $LOG_FILE
+echo "Client MTU: $CLIENT_MTU" >> $LOG_FILE
+echo "" >> $LOG_FILE
+
+echo "Testing with client/server MTU: ($CLIENT_MTU/$SERVER_MTU)"
+
 # Run starting at the beginning of a minute.
 # Test starts early for the warm-up ("omit") time to complete before the beginning of a minute.
 
