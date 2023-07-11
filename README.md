@@ -1,6 +1,11 @@
 # net-test
 Simple network performance testing using iperf3 on ubuntu.
 
+## Version History
+| Version | Notes |
+| ------: | ----- |
+| v1.0.0 | Initial Release. |
+
 ## Test Configuration
 To run tests with ```iperf3``` you will need a server instance and a client instance. These could be actual
 hardware machines or virtual machines. You will also need a network connection between the server and the client.
