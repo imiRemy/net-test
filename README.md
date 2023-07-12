@@ -1,26 +1,36 @@
 # net-test
-Simple network performance testing using iperf3 on ubuntu.
+Simple network performance testing using ```iperf3``` on ubuntu.
+
+## Version History
+| Version | Notes |
+| ------: | ----- |
+| v1.0.0 | Initial Release. |
 
 ## Test Configuration
 To run tests with ```iperf3``` you will need a server instance and a client instance. These could be actual
 hardware machines or virtual machines. You will also need a network connection between the server and the client.
 
 ## Installation
-For installation on ubuntu, use the ```install.sh``` script which will add ```ifconfig``` and ```iperf3``` if they are not already on your system.
+Clone the github repo to a convenient location. The repo has tools for both the client and the server so the same repo can be downloaded to both machines. Alternatively, with a virtual environment, you can install on one machine and then clonee the machine for the second system.
+
+Use the ```install.sh``` script which will add ```ifconfig``` and ```iperf3``` if they are not already on your system. The installation will also allow you to setup for ```ssh``` access and also for a basic firewall with ```ufw```.
 
 ```$ ./install.sh```
 
 ## Running Tests
+Use the .env file in the repo directory to set default parameters for testing.
 For a basic run of tests without changing any network buffers, MTU, etc., use the ```server_test.sh``` on
-the server instance and ```client_test.sh``` on the client instance of ubuntu.
+the server instance and ```client_test.sh``` on the client instance of ubuntu. Default settings cand be set in the ```.env``` file.
 
 To run the tests, start the server script on the server machine and then invoke the client script on the client machine. Results will be recorded to a log file on the client machine. Note that the scripts take an optional argument which is the IPv4 address that the server is listening on; if no argument is provided, a hardwired IP address is used.
 
 Server side:
-```$ ./server_test.sh <server_IP_address>```
+```$ ./server_test.sh```
 
 Client side:
-```$ ./client_test.sh <server_IP_address>```
+```$ ./client_test.sh```
+
+A log file of results will be printed on the machine where the ```client_test.sh``` runs. The location of the log file can be configured with the ```.env``` file.
 
 ## Some Results
 The following results were obtained from using Ubuntu virtual machines running in a Proxmox environment and using a dedicated 10Gb Ethernet NIC card separate from the main network interface for the system.
