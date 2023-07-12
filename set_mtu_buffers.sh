@@ -1,18 +1,29 @@
 #!/bin/bash
-
-# Usage: set_buffers.sh [interface]
-# These changes are lost at system restart.
+#
+# Script to change MTU to Jumbo frames and misc. network buffers.
+#
+# Usage: set_mtu_buffers.sh [interface]
+#   where [interface] is an optionally supplied network interface name;
+#   otherwise, the network interface specified in the .env file is used.
+#
+# NOTE: Changes made by this script are lost at system restart.
+#
+# Copyright (C) 2023 Remy Malan  (https://github.com/imiRemy/net-test.git)
+# Permission to copy and modify is granted under the MIT license
+# Last revised: 2023-07-11
 
 source .env
 echo "Interface environment variable (default): $IF_DEFAULT"
 
-# Set MTU for jumbo frames.
+# Set interface.
 
 if [ $# -eq 0 ] ; then
   INTERFACE=$IF_DEFAULT
 else
   INTERFACE="$1"
 fi
+
+# Set MTU to Jumbo frames.
 
 echo "Set MTU on $INTERFACE"
 sudo ifconfig $INTERFACE mtu 9000 up
