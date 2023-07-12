@@ -1,6 +1,14 @@
 #!/bin/bash
-
+#
+# Script to run client side iperf3 networking tests.
+#
 # Usage: client_test.sh [IP address]
+#   where [IP address] is an optionally supplied server IP address;
+#   otherwise, the server IP address specified in the .env file is used.
+#
+# Copyright (C) 2023 Remy Malan  (https://github.com/imiRemy/net-test.git)
+# Permission to copy and modify is granted under the MIT license
+# Last revised: 2023-07-11
 
 # Read in default values from ".env" file.
 
