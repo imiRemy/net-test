@@ -20,7 +20,7 @@ Use the ```install.sh``` script which will add ```ifconfig``` and ```iperf3``` i
 ## Running Tests
 Use the .env file in the repo directory to set default parameters for testing.
 For a basic run of tests without changing any network buffers, MTU, etc., use the ```server_test.sh``` on
-the server instance and ```client_test.sh``` on the client instance of ubuntu. Default settings cand be set in the ```.env``` file.
+the server instance and ```client_test.sh``` on the client instance of ubuntu. Default settings can be set in the ```.env``` file.
 
 To run the tests, start the server script on the server machine and then invoke the client script on the client machine. Results will be recorded to a log file on the client machine. Note that the scripts take an optional argument which is the IPv4 address that the server is listening on; if no argument is provided, a hardwired IP address is used.
 
