@@ -1,5 +1,6 @@
 # net-test
 Simple network performance testing using ```iperf3``` on ubuntu.
+Related [article](https://medium.com/@remy.malan/bits-pieces-generating-10-gbps-traffic-ccf14c559ccb) on Medium.
 
 ## Version History
 | Version | Notes |
